@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "word": "translate",
+    "pos": "v.",
+    "definition": "to change words into a different language",
+    "meaning": "v. 번역하다",
+    "example": "I used a smartphone app to translate the Korean sentence into English.",
+    "translation": "나는 그 한국어 문장을 영어로 번역하기 위해 스마트폰 앱을 사용했다."
+  },
+  {
+    "id": 2,
+    "word": "strategy",
+    "pos": "n.",
+    "definition": "a planned series of actions for achieving something",
+    "meaning": "n. 전략",
+    "example": "We need a good strategy to win the soccer game tomorrow.",
+    "translation": "내일 축구 경기에서 이기기 위해 우리는 좋은 전략이 필요하다."
+  },
+  {
+    "id": 3,
+    "word": "professional",
+    "pos": "a.",
+    "definition": "relating to work that needs special skills or training",
+    "meaning": "a. 전문적인",
+    "example": "If you want to be a professional gamer, you have to practice every day.",
+    "translation": "전문적인 게이머가 되고 싶다면 너는 매일 연습해야 한다."
+  },
+  {
+    "id": 4,
+    "word": "graduation",
+    "pos": "n.",
+    "definition": "the completion of a school or university course",
+    "meaning": "n. 졸업",
+    "example": "We are going to take a lot of pictures after the middle school graduation.",
+    "translation": "우리는 중학교 졸업식 후에 사진을 많이 찍을 것이다."
+  },
+  {
+    "id": 5,
+    "word": "concept",
+    "pos": "n.",
+    "definition": "the main idea or theme of something",
+    "meaning": "n. 주제, 콘셉트",
+    "example": "The video was popular because of its interesting concept.",
+    "translation": "그 영상은 흥미로운 콘셉트 때문에 인기를 끌었다."
+  },
+  {
+    "id": 6,
+    "word": "costume",
+    "pos": "n.",
+    "definition": "clothes worn by actors or clothes worn to look like someone else",
+    "meaning": "n. 의상, 복장",
+    "example": "She made her own costume for the school play.",
+    "translation": "그녀는 학교 연극을 위해 자신의 의상을 직접 만들었다."
+  },
+  {
+    "id": 7,
+    "word": "dress",
+    "pos": "v.",
+    "definition": "to put clothes on yourself or someone else",
+    "meaning": "v. 옷을 입다",
+    "example": "He dressed up nicely for his sister's wedding.",
+    "translation": "그는 누나의 결혼식을 위해 멋지게 옷을 차려입었다."
+  },
+  {
+    "id": 8,
+    "word": "design",
+    "pos": "v.",
+    "definition": "to draw or plan something before making it",
+    "meaning": "v. 디자인(설계/도안)하다",
+    "example": "The students designed a poster to protect the environment.",
+    "translation": "학생들은 환경을 보호하기 위해 포스터를 디자인했다."
+  },
+  {
+    "id": 9,
+    "word": "architect",
+    "pos": "n.",
+    "definition": "a person whose job is designing buildings",
+    "meaning": "n. 건축가",
+    "example": "My dream is to become a great architect who builds eco-friendly houses.",
+    "translation": "내 꿈은 친환경적인 집을 짓는 훌륭한 건축가가 되는 것이다."
+  },
+  {
+    "id": 10,
+    "word": "curved",
+    "pos": "a.",
+    "definition": "having a smooth, round shape; not straight",
+    "meaning": "a. 곡선의, 휜",
+    "example": "The new smartphone has a beautiful curved screen.",
+    "translation": "그 새 스마트폰은 아름다운 곡선 화면을 가지고 있다."
+  },
+  {
+    "id": 11,
+    "word": "dynamic",
+    "pos": "a.",
+    "definition": "full of energy and new ideas",
+    "meaning": "a. 역동적인",
+    "example": "K-pop dances are very dynamic and fun to watch.",
+    "translation": "K팝 댄스는 매우 역동적이고 보기에 재미있다."
+  },
+  {
+    "id": 12,
+    "word": "wetland",
+    "pos": "n.",
+    "definition": "an area of land that is partly covered with water",
+    "meaning": "n. 습지",
+    "example": "The wetland is an important place because many rare birds live there.",
+    "translation": "그 습지는 많은 희귀한 새들이 살고 있기 때문에 중요한 장소이다."
+  },
+  {
+    "id": 13,
+    "word": "inspire",
+    "pos": "v.",
+    "definition": "to make someone want to do something creative",
+    "meaning": "v. 영감을 주다",
+    "example": "Reading many books will inspire you to write a good story.",
+    "translation": "많은 책을 읽는 것은 네가 좋은 이야기를 쓰도록 영감을 줄 것이다."
+  },
+  {
+    "id": 14,
+    "word": "natural",
+    "pos": "a.",
+    "definition": "existing in nature and not made by people",
+    "meaning": "a. 자연의",
+    "example": "Jeju Island is famous for its beautiful natural landscapes.",
+    "translation": "제주도는 아름다운 자연 풍경으로 유명하다."
+  },
+  {
+    "id": 15,
+    "word": "landscape",
+    "pos": "n.",
+    "definition": "a large area of natural land that you can see",
+    "meaning": "n. 풍경",
+    "example": "I like painting the beautiful landscape of my hometown.",
+    "translation": "나는 내 고향의 아름다운 풍경을 그리는 것을 좋아한다."
+  },
+  {
+    "id": 16,
+    "word": "architecture",
+    "pos": "n.",
+    "definition": "the art and study of designing and building structures",
+    "meaning": "n. 건축학",
+    "example": "I want to go to university to study modern architecture.",
+    "translation": "나는 현대 건축학을 공부하기 위해 대학교에 가고 싶다."
+  },
+  {
+    "id": 17,
+    "word": "square",
+    "pos": "a.",
+    "definition": "having four equal sides and four right angles",
+    "meaning": "a. 사각형의, 네모난",
+    "example": "The teacher asked us to draw a square box on the paper.",
+    "translation": "선생님은 우리에게 종이 위에 사각형 상자를 그리라고 하셨다."
+  },
+  {
+    "id": 18,
+    "word": "shaped",
+    "pos": "a.",
+    "definition": "having a particular shape",
+    "meaning": "a. ~의 모양(형태)의",
+    "example": "He gave me a special cookie shaped like a star.",
+    "translation": "그는 나에게 별 모양의 특별한 쿠키를 주었다."
+  },
+  {
+    "id": 19,
+    "word": "welcome",
+    "pos": "v.",
+    "definition": "to greet someone in a polite and friendly way",
+    "meaning": "v. 환영하다",
+    "example": "The principal warmly welcomed the new students at the entrance.",
+    "translation": "교장 선생님은 입구에서 신입생들을 따뜻하게 환영했다."
+  },
+  {
+    "id": 20,
+    "word": "client",
+    "pos": "n.",
+    "definition": "a person who uses the services or advice of a professional person",
+    "meaning": "n. 의뢰인, 고객",
+    "example": "The designer is listening to her client to understand what he wants.",
+    "translation": "그 디자이너는 그 고객이 무엇을 원하는지 이해하기 위해 고객의 말을 듣고 있다."
+  },
+  {
+    "id": 21,
+    "word": "support",
+    "pos": "v.",
+    "definition": "to agree with and help someone or something",
+    "meaning": "v. 지지하다",
+    "example": "My parents always support me when I have a difficult problem.",
+    "translation": "내가 어려운 문제를 겪을 때 부모님은 항상 나를 지지해 주신다."
+  },
+  {
+    "id": 22,
+    "word": "success",
+    "pos": "n.",
+    "definition": "the achievement of an aim or purpose",
+    "meaning": "n. 성공",
+    "example": "Hard work and practice are the keys to success.",
+    "translation": "노력과 연습이 성공의 열쇠이다."
+  },
+  {
+    "id": 23,
+    "word": "resemble",
+    "pos": "v.",
+    "definition": "to look like or be like someone or something",
+    "meaning": "v. 닮다, 비슷하다",
+    "example": "People say that I resemble my older brother, but our personalities are different.",
+    "translation": "사람들은 내가 형을 닮았다고 하지만, 우리의 성격은 다르다."
+  },
+  {
+    "id": 24,
+    "word": "pebble",
+    "pos": "n.",
+    "definition": "a small, smooth, round stone, especially one found on a beach or in a river",
+    "meaning": "n. 조약돌, 자갈",
+    "example": "The children were throwing small pebbles into the lake.",
+    "translation": "아이들이 호수 안으로 작은 조약돌들을 던지고 있었다."
+  },
+  {
+    "id": 25,
+    "word": "seashore",
+    "pos": "n.",
+    "definition": "the land along the edge of the sea",
+    "meaning": "n. 해안",
+    "example": "We collected beautiful shells while walking along the seashore.",
+    "translation": "우리는 해안을 따라 걷는 동안 아름다운 조개껍데기를 모았다."
+  },
+  {
+    "id": 26,
+    "word": "in motion",
+    "pos": "",
+    "definition": "moving; not completely still",
+    "meaning": "움직이고 있는",
+    "example": "It is dangerous to jump out of a bus while it is in motion.",
+    "translation": "버스가 움직이고 있는 동안 버스 밖으로 뛰어내리는 것은 위험하다."
+  },
+  {
+    "id": 27,
+    "word": "award",
+    "pos": "n.",
+    "definition": "a prize given to someone for something that person has achieved",
+    "meaning": "n. 상",
+    "example": "Jimin won the first prize award in the English speaking contest.",
+    "translation": "지민이는 영어 말하기 대회에서 1등 상을 받았다."
+  },
+  {
+    "id": 28,
+    "word": "pass away",
+    "pos": "",
+    "definition": "to die (a polite way of saying die)",
+    "meaning": "사망하다",
+    "example": "I felt very sad when my favorite singer passed away last month.",
+    "translation": "지난달에 내가 가장 좋아하는 가수가 사망했을 때 나는 매우 슬펐다."
+  },
+  {
+    "id": 29,
+    "word": "achieve",
+    "pos": "v.",
+    "definition": "to succeed at finishing something or reaching an aim",
+    "meaning": "v. 달성하다, 성취하다",
+    "example": "If you don't give up, you will finally achieve your goals.",
+    "translation": "만약 네가 포기하지 않는다면, 마침내 너의 목표를 달성할 것이다."
+  },
+  {
+    "id": 30,
+    "word": "happen",
+    "pos": "v.",
+    "definition": "to take place, usually without being planned",
+    "meaning": "v. 일어나다",
+    "example": "I wonder what will happen in the next episode of this drama.",
+    "translation": "이 드라마의 다음 에피소드에서 무슨 일이 일어날지 궁금하다."
+  }
+]
