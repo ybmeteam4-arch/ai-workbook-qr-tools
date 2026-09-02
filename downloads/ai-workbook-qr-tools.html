@@ -6,25 +6,134 @@
 <meta name="theme-color" content="#6f9f45">
 <title>평가문제집 디지털 학습 도구</title>
 <style>
-:root{--green:#6f9f45;--dark:#20321d;--cream:#f7f8f2;--white:#fff;--line:#dfe7d8;--shadow:0 12px 30px rgba(32,50,29,.1)}*{box-sizing:border-box}body{margin:0;font-family:Pretendard,"Noto Sans KR",Arial,sans-serif;color:var(--dark);background:var(--cream)}a{color:inherit;text-decoration:none}.hero{padding:46px 20px 34px;text-align:center;background:linear-gradient(135deg,#eaf2df,#fff)}.hero h1{margin:8px 0;font-size:clamp(1.75rem,5vw,2.8rem)}.eyebrow{margin:0;color:var(--green);font-weight:800;letter-spacing:.08em}.hero p:last-child{color:#60705c}.container{width:min(100% - 32px,960px);margin:28px auto 60px}.notice{background:#fff;border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:14px 16px;margin-bottom:18px;color:#52604e}.tabs{display:flex;gap:8px;overflow:auto;padding:4px 0 16px}.tabs button{border:1px solid var(--line);background:var(--white);padding:10px 16px;border-radius:999px;white-space:nowrap;font-weight:700;cursor:pointer}.tabs button.active{background:var(--dark);color:#fff}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px;min-height:180px}.card h2{margin:8px 0}.card .page{color:#62715e}.card a{display:inline-block;margin-top:12px;border-radius:12px;background:var(--green);color:#fff;padding:12px 16px;font-weight:800}.footer{text-align:center;color:#71806c;font-size:.85rem;margin-top:28px}@media(max-width:520px){.hero{padding-top:34px}.container{width:min(100% - 24px,960px);margin-top:20px}.grid{grid-template-columns:1fr}}
+:root{--green:#6f9f45;--dark:#20321d;--cream:#f7f8f2;--white:#fff;--line:#dfe7d8;--muted:#71806c;--shadow:0 12px 30px rgba(32,50,29,.1)}
+*{box-sizing:border-box}body{margin:0;font-family:Pretendard,"Noto Sans KR",Arial,sans-serif;color:var(--dark);background:var(--cream)}a{color:inherit;text-decoration:none}
+.hero{padding:46px 20px 34px;text-align:center;background:linear-gradient(135deg,#eaf2df,#fff)}.hero h1{margin:8px 0;font-size:clamp(1.75rem,5vw,2.8rem)}.eyebrow{margin:0;color:var(--green);font-weight:800;letter-spacing:.08em}.hero p:last-child{color:#60705c}
+.container{width:min(100% - 32px,960px);margin:28px auto 60px}.notice{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:14px 16px;margin-bottom:18px;color:#52604e}.noticeText{min-width:0}.noticeText strong{display:block;color:var(--dark);margin-bottom:3px}.status{font-size:.9rem;color:var(--muted)}.status.ok{color:#3f7828}.status.warn{color:#9a6518}.refresh{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px 13px;font-weight:800;color:var(--dark);cursor:pointer;min-height:44px}.refresh:disabled{opacity:.55;cursor:wait}
+.tabs{display:flex;gap:8px;overflow:auto;padding:4px 0 16px}.tabs button{border:1px solid var(--line);background:var(--white);padding:10px 16px;border-radius:999px;white-space:nowrap;font-weight:700;cursor:pointer;min-height:44px}.tabs button.active{background:var(--dark);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px;min-height:180px}.card h2{margin:8px 0}.card .page{color:#62715e}.card a{display:inline-block;margin-top:12px;border-radius:12px;background:var(--green);color:#fff;padding:12px 16px;font-weight:800}.empty{grid-column:1/-1;background:#fff;border:1px dashed var(--line);border-radius:18px;padding:28px;text-align:center;color:var(--muted)}
+.footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:28px}
+@media(max-width:520px){.hero{padding-top:34px}.container{width:min(100% - 24px,960px);margin-top:20px}.grid{grid-template-columns:1fr}.notice{align-items:stretch;flex-direction:column}.refresh{width:100%}}
 </style>
 </head>
 <body>
 <header class="hero"><p class="eyebrow">AI WORKBOOK</p><h1>평가문제집 디지털 학습 도구</h1><p>학습할 코너를 선택하세요.</p></header>
-<main class="container"><div class="notice">이 HTML 파일은 PC에서 바로 열 수 있습니다. 각 학습 기능을 실행하려면 인터넷 연결이 필요합니다.</div><nav id="tabs" class="tabs" aria-label="코너 선택"></nav><section id="grid" class="grid" aria-live="polite"></section><p class="footer">AI 부교재 평가문제집 QR 디지털 도구</p></main>
+<main class="container">
+  <div class="notice">
+    <div class="noticeText">
+      <strong>GitHub 최신 기능 목록 자동 연결</strong>
+      <span id="syncStatus" class="status" aria-live="polite">최신 기능 목록을 불러오는 중입니다.</span>
+    </div>
+    <button id="refreshButton" class="refresh" type="button">최신 목록 새로고침</button>
+  </div>
+  <nav id="tabs" class="tabs" aria-label="코너 선택"></nav>
+  <section id="grid" class="grid" aria-live="polite"><div class="empty">기능 목록을 불러오는 중입니다.</div></section>
+  <p class="footer">AI 부교재 평가문제집 QR 디지털 도구 · 인터넷 연결 필요</p>
+</main>
 <script>
-const base="https://ybmeteam4-arch.github.io/ai-workbook-qr-tools/";
-const features=[
-{order:1,id:"word-booster",page:2,title:"Word Booster",corner:"Vocabulary",url:base+"features/word-booster/"},
-{order:2,id:"grammar-video-1",page:14,title:"Grammar Video 1",corner:"Grammar",url:base+"tool.html?id=grammar-video-1"},
-{order:3,id:"grammar-video-2",page:16,title:"Grammar Video 2",corner:"Grammar",url:base+"features/grammar-video-2/"},
-{order:4,id:"writing-task",page:38,title:"Writing 추가 수행평가",corner:"Writing",url:base+"features/writing-task/"},
-{order:5,id:"speaking-task",page:39,title:"Speaking 추가 수행평가",corner:"Speaking",url:base+"features/speaking-task/"},
-{order:6,id:"error-retry",page:48,title:"MY ERROR NOTE",corner:"Review",url:base+"features/error-retry/"}
+const pagesBase="https://ybmeteam4-arch.github.io/ai-workbook-qr-tools/";
+const rawBase="https://raw.githubusercontent.com/ybmeteam4-arch/ai-workbook-qr-tools/main/";
+const manifestUrl=rawBase+"FEATURE_MANIFEST.json";
+const fallbackFeatures=[
+  {order:1,id:"word-booster",page:2,title:"Word Booster",corner:"Vocabulary"},
+  {order:2,id:"grammar-video-1",page:14,title:"Grammar Video 1",corner:"Grammar"},
+  {order:3,id:"grammar-video-2",page:16,title:"Grammar Video 2",corner:"Grammar"},
+  {order:4,id:"writing-task",page:38,title:"Writing 추가 수행평가",corner:"Writing"},
+  {order:5,id:"speaking-task",page:39,title:"Speaking 추가 수행평가",corner:"Speaking"},
+  {order:6,id:"error-retry",page:48,title:"오답 재도전",corner:"Review"}
 ];
-const tabs=document.querySelector("#tabs"),grid=document.querySelector("#grid"),corners=["전체",...new Set(features.map(x=>x.corner))];
-function draw(filter="전체"){grid.innerHTML=features.filter(x=>filter==="전체"||x.corner===filter).map(x=>'<article class="card"><p class="eyebrow">'+x.corner+'</p><h2>'+x.title+'</h2><p class="page">평가문제집 '+x.page+'쪽</p><a href="'+x.url+'" target="_blank" rel="noopener">학습하기</a></article>').join("")}
-tabs.innerHTML=corners.map((x,i)=>'<button class="'+(i===0?"active":"")+'" data-corner="'+x+'">'+x+'</button>').join("");
-tabs.addEventListener("click",e=>{if(!e.target.matches("button"))return;tabs.querySelectorAll("button").forEach(b=>b.classList.remove("active"));e.target.classList.add("active");draw(e.target.dataset.corner)});draw();
+let features=[];
+let activeCorner="전체";
+const tabs=document.querySelector("#tabs");
+const grid=document.querySelector("#grid");
+const syncStatus=document.querySelector("#syncStatus");
+const refreshButton=document.querySelector("#refreshButton");
+
+function cacheBuster(){return "v="+Date.now()}
+function escapeHtml(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]))}
+function genericUrl(id){return pagesBase+"tool.html?id="+encodeURIComponent(id)}
+
+async function rawExists(path){
+  try{
+    const sep=path.includes("?")?"&":"?";
+    const response=await fetch(rawBase+path+sep+cacheBuster(),{cache:"no-store"});
+    return response.ok;
+  }catch(error){
+    return false;
+  }
+}
+
+async function resolveFeatureUrl(item){
+  if(item.url){
+    try{return new URL(item.url,pagesBase).href}catch(error){}
+  }
+  const id=encodeURIComponent(item.id);
+  if(await rawExists("go/"+id+"/index.html")) return pagesBase+"go/"+id+"/";
+  if(await rawExists("features/"+id+"/index.html")) return pagesBase+"features/"+id+"/";
+  return genericUrl(item.id);
+}
+
+async function hydrateUrls(items){
+  return Promise.all(items.map(async item=>({...item,url:await resolveFeatureUrl(item)})));
+}
+
+function renderTabs(){
+  const corners=["전체",...new Set(features.map(x=>x.corner).filter(Boolean))];
+  if(!corners.includes(activeCorner)) activeCorner="전체";
+  tabs.innerHTML=corners.map(x=>'<button class="'+(x===activeCorner?"active":"")+'" data-corner="'+escapeHtml(x)+'">'+escapeHtml(x)+'</button>').join("");
+}
+
+function renderGrid(){
+  const visible=features.filter(x=>activeCorner==="전체"||x.corner===activeCorner).sort((a,b)=>(a.order??999)-(b.order??999));
+  if(!visible.length){
+    grid.innerHTML='<div class="empty">표시할 기능이 없습니다.</div>';
+    return;
+  }
+  grid.innerHTML=visible.map(x=>
+    '<article class="card">'+
+      '<p class="eyebrow">'+escapeHtml(x.corner||"")+'</p>'+
+      '<h2>'+escapeHtml(x.title||x.id)+'</h2>'+
+      '<p class="page">평가문제집 '+escapeHtml(x.page??"-")+'쪽</p>'+
+      '<a href="'+escapeHtml(x.url||genericUrl(x.id))+'" target="_blank" rel="noopener">학습하기</a>'+
+    '</article>'
+  ).join("");
+}
+
+function render(){renderTabs();renderGrid()}
+
+async function loadLatest(){
+  refreshButton.disabled=true;
+  syncStatus.className="status";
+  syncStatus.textContent="GitHub main의 최신 기능 목록을 불러오는 중입니다.";
+  try{
+    const response=await fetch(manifestUrl+"?"+cacheBuster(),{cache:"no-store"});
+    if(!response.ok) throw new Error("manifest "+response.status);
+    const data=await response.json();
+    if(!Array.isArray(data)) throw new Error("manifest 형식 오류");
+    features=await hydrateUrls(data);
+    render();
+    const now=new Date();
+    syncStatus.className="status ok";
+    syncStatus.textContent="최신 목록 연결 완료 · "+now.toLocaleString("ko-KR",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+  }catch(error){
+    features=await hydrateUrls(fallbackFeatures);
+    render();
+    syncStatus.className="status warn";
+    syncStatus.textContent="GitHub 최신 목록을 불러오지 못해 저장된 기본 목록을 표시합니다. 인터넷 연결 후 새로고침해 주세요.";
+    console.error(error);
+  }finally{
+    refreshButton.disabled=false;
+  }
+}
+
+tabs.addEventListener("click",event=>{
+  const button=event.target.closest("button[data-corner]");
+  if(!button)return;
+  activeCorner=button.dataset.corner;
+  render();
+});
+refreshButton.addEventListener("click",loadLatest);
+loadLatest();
 </script>
-</body></html>
+</body>
+</html>
