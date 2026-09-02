@@ -1,24 +1,6 @@
-<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Word Booster</title><link rel="stylesheet" href="style.css"></head>
-<body><header class="top"><a href="../../" class="home" aria-label="통합 화면으로">‹</a><div><p>Vocabulary List · Lesson 1</p><h1>Word Booster</h1></div><span id="progress">0/30</span></header>
-<main>
-<nav class="tabs" aria-label="학습 메뉴"><button class="tab active" data-tab="study">단어 학습</button><button class="tab" data-tab="quiz">확인 퀴즈</button></nav>
-<section id="study" class="panel active">
-<div class="meter"><span id="meterBar"></span></div>
-<article class="card">
-<div class="card-head"><span id="number"></span><button id="complete" class="complete">○ 학습 완료</button></div>
-<div class="word-row"><h2 id="word"></h2><button id="wordAudio" class="audio">🔊 발음 듣기</button></div>
-<p id="meaning" class="meaning"></p>
-<div class="info"><span>영영 풀이</span><p id="definition"></p></div>
-<div class="info example"><span>예문</span><p id="example"></p><p id="translation" class="translation"></p><button id="sentenceAudio" class="audio">🔊 예문 듣기</button></div>
-</article>
-<div class="nav"><button id="prev">← 이전</button><button id="random">무작위</button><button id="next">다음 →</button></div>
-</section>
-<section id="quiz" class="panel">
-<div id="quizIntro" class="quiz-box"><div class="quiz-icon">✓</div><h2>확인 퀴즈</h2><p>영영 풀이, 예문, 발음을 듣고 알맞은 단어를 골라 보세요.</p><button id="startQuiz" class="primary">10문제 시작하기</button></div>
-<div id="quizPlay" class="quiz-box hidden"><div class="quiz-status"><span id="quizCount"></span><strong id="score"></strong></div><div class="meter"><span id="quizMeter"></span></div><p id="quizType" class="label"></p><h2 id="question"></h2><button id="quizAudio" class="audio hidden">🔊 다시 듣기</button><div id="choices" class="choices"></div><p id="feedback" class="feedback" aria-live="polite"></p><button id="nextQuestion" class="primary hidden">다음 문제</button></div>
-<div id="quizResult" class="quiz-box hidden"><div class="quiz-icon">★</div><h2 id="resultTitle"></h2><p id="resultText"></p><button id="retryQuiz" class="primary">다시 풀기</button></div>
-</section>
-</main>
-<audio id="wordPlayer" preload="metadata" src="assets/audio/L1_words.mp3"></audio><audio id="sentencePlayer" preload="metadata" src="assets/audio/L1_sentences.mp3"></audio>
-<script src="script.js"></script></body></html>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#3155d9"><title>Word Booster</title><link rel="stylesheet" href="style.css"></head><body><main class="shell">
+<header><div><p class="eyebrow">Vocabulary List · Lesson 1</p><h1>Word Booster</h1><p>발음과 뜻, 예문을 익힌 뒤 확인 퀴즈를 풀어 보세요.</p></div><span id="progress" class="progress">0 / 30 학습</span></header>
+<nav class="tabs"><button class="tab active" data-tab="learn">단어 학습</button><button class="tab" data-tab="quiz">확인 퀴즈</button></nav>
+<section id="learnPanel"><div class="card"><div class="cardtop"><span id="counter">1 / 30</span><button id="completeBtn" class="complete">○ 학습 완료</button></div><div class="wordrow"><h2 id="word"></h2><button id="wordAudio" class="audio">🔊 발음 듣기</button></div><p id="meaning" class="meaning"></p><div class="box"><strong>영영풀이</strong><p id="definition"></p></div><div class="box"><div class="boxhead"><strong>예문</strong><button id="sentenceAudio" class="audio small">🔊 예문 듣기</button></div><p id="example"></p><p id="translation" class="translation"></p></div></div><div class="navrow"><button id="prev">← 이전</button><button id="random" class="ghost">무작위</button><button id="next">다음 →</button></div></section>
+<section id="quizPanel" hidden><div id="quizStart" class="quizintro"><h2>확인 퀴즈</h2><p>무작위 10문제로 학습 내용을 확인해 보세요.</p><button id="startQuiz" class="primary">퀴즈 시작</button></div><div id="quizBox" hidden><div class="quizhead"><span id="quizCount"></span><span id="score"></span></div><div class="quizcard"><p id="quizLabel" class="eyebrow"></p><h2 id="question"></h2><button id="quizAudio" class="audio" hidden>🔊 다시 듣기</button><div id="choices" class="choices"></div><p id="feedback" class="feedback" aria-live="polite"></p><button id="nextQuestion" class="primary" hidden>다음 문제</button></div></div><div id="result" class="quizintro" hidden><h2 id="resultScore"></h2><p id="resultMessage"></p><button id="retry" class="primary">다시 풀기</button></div></section>
+<audio id="wordPlayer" preload="metadata" src="assets/audio/L1_words.mp3"></audio><audio id="sentencePlayer" preload="metadata" src="assets/audio/L1_sentences.mp3"></audio></main><script src="script.js"></script></body></html>
