@@ -1,0 +1,14 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#2459a8"><title>Writing 추가 수행평가</title><link rel="stylesheet" href="style.css"></head><body><main class="shell">
+<header><p class="eyebrow">Writing Performance Task</p><h1>My Future Skill Challenge</h1><p>미래의 진로에 필요한 능력을 정하고, 준비 계획을 5문장 이상으로 써 보세요.</p></header>
+<section class="topic"><h2>주제 선택</h2><div class="topicButtons"><button class="topicBtn active" data-set="0"><strong>SET 1</strong><span>My Future Skill Challenge</span></button><button class="topicBtn" data-set="1"><strong>SET 2</strong><span>My Future Teamwork Challenge</span></button></div><p id="topicGuide" class="guide"></p></section>
+<section><div class="sectionTitle"><span>1</span><div><h2>아이디어 정리</h2><p>각 항목에 핵심어를 입력해 보세요.</p></div></div><div class="ideaGrid">
+<label><span>My dream career</span><small>나의 장래 희망</small><input id="career" type="text" placeholder="e.g. an architect"></label>
+<label><span>A skill to build</span><small>기를 능력</small><input id="skill" type="text" placeholder="e.g. presentation skills"></label>
+<label><span>Why it matters</span><small>능력이 필요한 이유</small><input id="why" type="text" placeholder="e.g. I must explain my ideas clearly"></label>
+<label><span>My action plan</span><small>구체적인 준비 계획</small><input id="plan" type="text" placeholder="e.g. practice speaking every week"></label>
+</div></section>
+<section><div class="sectionTitle"><span>2</span><div><h2>필수 표현</h2><p>다음 표현을 글에 활용해 보세요.</p></div></div><ul class="expressions"><li>I've decided to become <b>_____</b>.</li><li>I'm planning to learn / practice <b>_____</b>.</li><li>I need this skill because <b>_____</b>.</li><li>In the future, I want to <b>_____</b>.</li></ul></section>
+<section><div class="sectionTitle"><span>3</span><div><h2>예시 답안</h2><p>선택한 소재의 예시를 확인해 보세요.</p></div></div><button id="exampleToggle" class="outline" aria-expanded="false">예시 답안 보기</button><div id="exampleBox" class="example" hidden><p id="exampleText"></p></div></section>
+<section><div class="sectionTitle"><span>4</span><div><h2>나의 글쓰기</h2><p>필수 표현을 활용하여 5문장 이상 써 보세요.</p></div></div><div class="checklist"><span>장래 희망</span><span>필요한 능력</span><span>이유</span><span>구체적 계획</span></div><button id="makeDraft" class="outline helper">정리한 아이디어로 시작하기</button><textarea id="studentWriting" rows="11" placeholder="Write your paragraph here."></textarea><div class="writingMeta"><span id="sentenceCount">0문장</span><span id="requiredCount">필수 표현 0 / 4</span></div></section>
+<div class="actions"><button id="clearBtn" class="outline">다시 쓰기</button><button id="pdfButton" class="pdfButton">PDF로 다운로드</button></div><p class="pdfNote">현재 화면에서는 버튼만 제공하며 실제 파일은 다운로드되지 않습니다.</p>
+</main><script src="script.js"></script></body></html>
