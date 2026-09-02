@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#6f9f45">
+<title>평가문제집 디지털 학습 도구</title>
+<style>
+:root{--green:#6f9f45;--dark:#20321d;--cream:#f7f8f2;--white:#fff;--line:#dfe7d8;--shadow:0 12px 30px rgba(32,50,29,.1)}*{box-sizing:border-box}body{margin:0;font-family:Pretendard,"Noto Sans KR",Arial,sans-serif;color:var(--dark);background:var(--cream)}a{color:inherit;text-decoration:none}.hero{padding:46px 20px 34px;text-align:center;background:linear-gradient(135deg,#eaf2df,#fff)}.hero h1{margin:8px 0;font-size:clamp(1.75rem,5vw,2.8rem)}.eyebrow{margin:0;color:var(--green);font-weight:800;letter-spacing:.08em}.hero p:last-child{color:#60705c}.container{width:min(100% - 32px,960px);margin:28px auto 60px}.notice{background:#fff;border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:14px 16px;margin-bottom:18px;color:#52604e}.tabs{display:flex;gap:8px;overflow:auto;padding:4px 0 16px}.tabs button{border:1px solid var(--line);background:var(--white);padding:10px 16px;border-radius:999px;white-space:nowrap;font-weight:700;cursor:pointer}.tabs button.active{background:var(--dark);color:#fff}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px;min-height:180px}.card h2{margin:8px 0}.card .page{color:#62715e}.card a{display:inline-block;margin-top:12px;border-radius:12px;background:var(--green);color:#fff;padding:12px 16px;font-weight:800}.footer{text-align:center;color:#71806c;font-size:.85rem;margin-top:28px}@media(max-width:520px){.hero{padding-top:34px}.container{width:min(100% - 24px,960px);margin-top:20px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero"><p class="eyebrow">AI WORKBOOK</p><h1>평가문제집 디지털 학습 도구</h1><p>학습할 코너를 선택하세요.</p></header>
+<main class="container"><div class="notice">이 HTML 파일은 PC에서 바로 열 수 있습니다. 각 학습 기능을 실행하려면 인터넷 연결이 필요합니다.</div><nav id="tabs" class="tabs" aria-label="코너 선택"></nav><section id="grid" class="grid" aria-live="polite"></section><p class="footer">AI 부교재 평가문제집 QR 디지털 도구</p></main>
+<script>
+const base="https://ybmeteam4-arch.github.io/ai-workbook-qr-tools/";
+const features=[
+{order:1,id:"word-booster",page:2,title:"Word Booster",corner:"Vocabulary",url:base+"features/word-booster/"},
+{order:2,id:"grammar-video-1",page:14,title:"Grammar Video 1",corner:"Grammar",url:base+"tool.html?id=grammar-video-1"},
+{order:3,id:"grammar-video-2",page:16,title:"Grammar Video 2",corner:"Grammar",url:base+"tool.html?id=grammar-video-2"},
+{order:4,id:"writing-task",page:38,title:"Writing 추가 수행평가",corner:"Writing",url:base+"features/writing-task/"},
+{order:5,id:"speaking-task",page:39,title:"Speaking 추가 수행평가",corner:"Speaking",url:base+"features/speaking-task/"},
+{order:6,id:"error-retry",page:48,title:"MY ERROR NOTE",corner:"Review",url:base+"features/error-retry/"}
+];
+const tabs=document.querySelector("#tabs"),grid=document.querySelector("#grid"),corners=["전체",...new Set(features.map(x=>x.corner))];
+function draw(filter="전체"){grid.innerHTML=features.filter(x=>filter==="전체"||x.corner===filter).map(x=>'<article class="card"><p class="eyebrow">'+x.corner+'</p><h2>'+x.title+'</h2><p class="page">평가문제집 '+x.page+'쪽</p><a href="'+x.url+'" target="_blank" rel="noopener">학습하기</a></article>').join("")}
+tabs.innerHTML=corners.map((x,i)=>'<button class="'+(i===0?"active":"")+'" data-corner="'+x+'">'+x+'</button>').join("");
+tabs.addEventListener("click",e=>{if(!e.target.matches("button"))return;tabs.querySelectorAll("button").forEach(b=>b.classList.remove("active"));e.target.classList.add("active");draw(e.target.dataset.corner)});draw();
+</script>
+</body></html>
