@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - 'features/word-booster/audio-source.json'
+      - '.github/workflows/build-word-booster-audio.yml'
+      - '.github/scripts/build_word_booster_audio.py'
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -11,43 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Decode, merge and index audio
-        run: |
-          python3 - <<'PY'
-          import base64, json, pathlib, subprocess
-          root=pathlib.Path('features/word-booster')
-          src=root/'audio-source.json'
-          temp=root/'assets/audio/_temp'
-          out=root/'assets/audio'
-          temp.mkdir(parents=True,exist_ok=True)
-          data=json.loads(src.read_text())
-          for name,b64 in data.items():
-              (temp/name).write_bytes(base64.b64decode(b64))
-          groups={
-              'word':sorted([p for p in temp.glob('L1_voca_*.mp3') if '_sen' not in p.name]),
-              'sentence':sorted(temp.glob('L1_voca_*_sen.mp3'))
-          }
-          timings={}
-          for kind,items in groups.items():
-              cursor=0.0
-              rows=[]
-              listfile=temp/f'{kind}.txt'
-              listfile.write_text(''.join("file '"+str(p.resolve()).replace("'","'\\''")+"'
-" for p in items))
-              for p in items:
-                  n=int(p.stem.split('_')[2])
-                  d=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','default=nw=1:nk=1',str(p)],text=True).strip())
-                  rows.append((n,cursor,cursor+d))
-                  cursor+=d
-              target=out/('L1_words.mp3' if kind=='word' else 'L1_sentences.mp3')
-              subprocess.run(['ffmpeg','-y','-f','concat','-safe','0','-i',str(listfile),'-ac','1','-b:a','64k',str(target)],check=True)
-              for n,start,end in rows:
-                  timings.setdefault(str(n),{})[kind]={'start':round(start,3),'end':round(end,3)}
-          (out/'audio-timings.json').write_text(json.dumps(timings,ensure_ascii=False,indent=2))
-          src.unlink()
-          import shutil
-          shutil.rmtree(temp)
-          shutil.rmtree(out/'source',ignore_errors=True)
-          PY
+        run: python3 .github/scripts/build_word_booster_audio.py
       - name: Commit merged files
         run: |
           git config user.name "github-actions[bot]"
