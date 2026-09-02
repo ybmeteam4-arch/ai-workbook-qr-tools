@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install audio tools
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Decode, merge and index audio
         run: python3 .github/scripts/build_word_booster_audio.py
       - name: Commit merged files
